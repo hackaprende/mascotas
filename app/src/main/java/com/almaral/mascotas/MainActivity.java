@@ -1,10 +1,10 @@
 package com.almaral.mascotas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
         petAdapter.setOnPetClickListener(new PetAdapter.OnPetClickListener() {
             @Override
             public void onPetClick(Pet pet) {
-                Toast.makeText(MainActivity.this, pet.getName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra(DetailActivity.PET_KEY, pet);
+
+                startActivity(intent);
             }
         });
     }
