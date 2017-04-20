@@ -45,7 +45,7 @@
                 android:id="@+id/activity_detail_owner_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                style="@style/OwnerInfoStyle"
                 tools:text="Actual dueño: Omar"/>
 
             <View
@@ -59,7 +59,7 @@
                 android:id="@+id/activity_detail_owner_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                style="@style/OwnerInfoStyle"
                 tools:text="Movil: 555-55-55"/>
 
         </LinearLayout>
