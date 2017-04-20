@@ -1,82 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ecf0f1">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/detail_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@android:color/white"/>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/activity_detail_pet_image"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/capitano"/>
-
-            <TextView
-                android:id="@+id/activity_detail_pet_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/activity_detail_pet_image"
-                android:padding="16dp"
-                android:textColor="@android:color/white"
-                android:textSize="32sp"
-                tools:text="Capitano"/>
-
-        </RelativeLayout>
+        android:background="#ecf0f1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/activity_detail_owner_name"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/activity_detail_pet_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/capitano"/>
+
+                <TextView
+                    android:id="@+id/activity_detail_pet_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/activity_detail_pet_image"
+                    android:padding="16dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="32sp"
+                    tools:text="Capitano"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/OwnerInfoStyle"
-                tools:text="Actual dueño: Omar"/>
+                android:background="@android:color/white"
+                android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:background="@android:color/darker_gray"/>
+                <TextView
+                    android:id="@+id/activity_detail_owner_name"
+                    style="@style/OwnerInfoStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Actual dueño: Omar"/>
 
-            <TextView
-                android:id="@+id/activity_detail_owner_phone_number"
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <TextView
+                    android:id="@+id/activity_detail_owner_phone_number"
+                    style="@style/OwnerInfoStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Movil: 555-55-55"/>
+
+            </LinearLayout>
+
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/OwnerInfoStyle"
-                tools:text="Movil: 555-55-55"/>
+                android:layout_marginTop="16dp"
+                android:background="@android:color/white"
+                android:padding="16dp">
 
+                <TextView
+                    android:id="@+id/activity_detail_pet_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pet_description"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+            </FrameLayout>
         </LinearLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/white"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/activity_detail_pet_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/pet_description"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
-        </FrameLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>
