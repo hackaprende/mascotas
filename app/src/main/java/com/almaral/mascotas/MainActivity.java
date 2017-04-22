@@ -3,7 +3,7 @@ package com.almaral.mascotas;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView petRecycler = (RecyclerView) findViewById(R.id.activity_main_pet_recycler);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        petRecycler.setLayoutManager(linearLayoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
+        petRecycler.setLayoutManager(gridLayoutManager);
 
         ArrayList<Pet> petList = new ArrayList<>();
         petList.add(new Pet("Sia", getString(R.string.pet_description), "Sandra", "555-55-55", R.drawable.sia));
